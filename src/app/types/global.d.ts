@@ -1,7 +1,16 @@
-declare module '*.scss' {
+declare module "*.scss" {
   interface IClassNames {
-    [className: string]: string
+    [className: string]: string;
   }
   const classNames: IClassNames;
   export = classNames;
+}
+
+declare module "*.png";
+declare module "*.jpeg";
+declare module "*.gif";
+declare module "*.svg" {
+  import * as React from "react";
+  const SVG: React.FC<React.SVGProps<SVGSVGElement>>;
+  export default SVG;
 }

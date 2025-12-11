@@ -1,7 +1,10 @@
-import React from 'react'
+import React from "react";
+import { Container } from "shared/ui/Container";
 
 export default function MainPage() {
   return (
-    <div>MainPage</div>
-  )
+    <div>
+      <Container>MainPage</Container>
+    </div>
+  );
 }

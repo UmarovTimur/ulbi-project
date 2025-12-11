@@ -1,7 +1,10 @@
-import React from 'react'
+import React from "react";
+import { Container } from "shared/ui/Container";
 
 export default function AboutPage() {
   return (
-    <div>AboutPage</div>
-  )
+    <div>
+      <Container>AboutPage</Container>
+    </div>
+  );
 }
