@@ -7,12 +7,14 @@ import { Container } from "shared/ui/Container";
 
 export const AppRouter = () => {
   return (
-    <Suspense fallback={<Container>Loading...</Container>}>
-      <Routes>
-        {Object.values(routeConfig).map(({ element, path }) => (
-          <Route key={path} path={path} element={element} />
-        ))}
-      </Routes>
-    </Suspense>
+    <div className="content-wrapper">
+      <Suspense fallback={<Container>Loading...</Container>}>
+        <Routes>
+          {Object.values(routeConfig).map(({ element, path }) => (
+            <Route key={path} path={path} element={element} />
+          ))}
+        </Routes>
+      </Suspense>
+    </div>
   );
 };
