@@ -8,6 +8,21 @@ export function buildLoaders({ isDev }: BuildOptions): webpack.RuleSetRule[] {
     issuer: /\.[jt]sx?$/,
     use: ["@svgr/webpack"],
   };
+  const bableLoader = {
+    test: /\.(?:js|jsx|tsx)$/,
+    exclude: /node_modules/,
+    use: {
+      loader: "babel-loader",
+      options: {
+        targets: "defaults",
+        presets: [["@babel/preset-env"]],
+        plugins: [
+          ["i18next-extract", { nsSeparator: "~", locales: ["ru", "en"], keyAsDefaultValue: true }],
+          // […] your other plugins […]
+        ],
+      },
+    },
+  };
   const fileLoader = {
     test: /\.(png|jpe?g|gif|ttf|woff2|woff)$/i,
     use: [
@@ -41,5 +56,5 @@ export function buildLoaders({ isDev }: BuildOptions): webpack.RuleSetRule[] {
     exclude: /node_modules/,
   };
 
-  return [typescriptLoader, cssLoader, svgLoader, fileLoader];
+  return [fileLoader, bableLoader, typescriptLoader, cssLoader, svgLoader];
 }
