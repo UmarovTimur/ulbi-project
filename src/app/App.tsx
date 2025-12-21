@@ -10,20 +10,20 @@ import { LangSwitcher } from "shared/ui/LangSwitcher";
 
 
 const App = () => {
-  const { theme } = useTheme();
+    const { theme } = useTheme();
 
-  return (
-    <div className={classNames("app", {}, [theme])}>
-      <Suspense fallback="">
-        <Navbar />
-        <main className="content-page">
-          <Sidebar />
-          <LangSwitcher />
-          <AppRouter />
-        </main>
-      </Suspense>
-    </div>
-  );
+    return (
+        <div className={classNames("app", {}, [theme])}>
+            <Suspense fallback="">
+                <Navbar />
+                <main className="content-page">
+                    <Sidebar />
+                    <LangSwitcher />
+                    <AppRouter />
+                </main>
+            </Suspense>
+        </div>
+    );
 };
 
 export default App;
