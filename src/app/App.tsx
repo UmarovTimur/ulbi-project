@@ -5,7 +5,6 @@ import { AppRouter } from "./providers/router";
 import { Navbar } from "widgets/Navbar";
 import { Sidebar } from "widgets/Sidebar";
 import { Suspense } from "react";
-import { LangSwitcher } from "shared/ui/LangSwitcher";
 
 
 
@@ -18,7 +17,6 @@ const App = () => {
                 <Navbar />
                 <main className="content-page">
                     <Sidebar />
-                    <LangSwitcher />
                     <AppRouter />
                 </main>
             </Suspense>

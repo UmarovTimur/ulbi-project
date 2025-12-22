@@ -1,4 +1,5 @@
 import { useTranslation } from "react-i18next";
+import { Button } from "shared/ui/Button";
 
 export const LangSwitcher = () => {
     const { t, i18n } = useTranslation();
@@ -9,7 +10,7 @@ export const LangSwitcher = () => {
 
     return (
         <div>
-            <button onClick={toggle}>{t("Перевод")}</button>
+            <Button onClick={toggle}>{t("Перевод")}</Button>
         </div>
     );
 };
