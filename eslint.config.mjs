@@ -11,7 +11,7 @@ export default defineConfig([
     pluginReact.configs.flat.recommended,
 ],
 {
-    files: ["**/*.{js,mjs,cjs,ts,mts,cts,jsx,tsx}"],
+    files: ["src/**/*.{js,mjs,cjs,ts,mts,cts,jsx,tsx}"],
     plugins: { react: pluginReact },
     extends: [],
     languageOptions: {

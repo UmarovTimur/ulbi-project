@@ -5,7 +5,10 @@ import { BrowserRouter } from "react-router-dom";
 import "shared/config/i18n/i18n";
 
 render(
-    <BrowserRouter>
+    <BrowserRouter future={{
+        v7_startTransition: true,
+        v7_relativeSplatPath: true,
+    }} >
         <ThemeProvider>
             <App />
         </ThemeProvider>
