@@ -4,14 +4,12 @@
   background-color: var(--inverse-bg-color);
   color: var(--bg-color);
 }
-
 .NavbarContainer {
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-end;
   align-items: center;
   height: 100%;
 }
-
 .links {
   display: flex;
   column-gap: 20px;

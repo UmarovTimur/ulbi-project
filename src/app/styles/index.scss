@@ -1,7 +1,7 @@
-@import "reset";
-@import "variables/global";
-@import "themes/normal";
-@import "themes/dark";
+@use "reset";
+@use "variables/global";
+@use "themes/dark";
+@use "themes/normal";
 
 .app {
   font: var(--font-m);
@@ -9,12 +9,18 @@
   color: var(--primary-color);
   min-height: 100vh;
 }
-
 main.content-page {
   display: grid;
   display: flex;
 }
-
 .content-wrapper {
   flex-grow: 1;
+}
+@keyframes rotation {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
 }
