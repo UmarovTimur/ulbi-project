@@ -12,7 +12,9 @@ export const ThemeSwitcher = ({ className }: ThemeSwitcherProps) => {
 
     return (
         <Button theme={theme} onClick={toggleTheme} className={classNames('', {}, [className])}>
-            {theme === Theme.DARK ? <NormalIcon width="20px" height="20px" /> : <DarkIcon width="20px" height="20px" />}
+            {theme === Theme.DARK
+                ? <NormalIcon width="20px" height="20px" />
+                : <DarkIcon width="20px" height="20px" />}
         </Button>
     );
 };

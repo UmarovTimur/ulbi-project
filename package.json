@@ -10,7 +10,8 @@
     "lint:ts": "npx eslint ./src/",
     "lint:ts:fix": "npx eslint ./src/ --fix",
     "lint:scss": "npx stylelint \"**/*.scss\"",
-    "lint:scss:fix": "npx stylelint \"**/*.scss\" --fix"
+    "lint:scss:fix": "npx stylelint \"**/*.scss\" --fix",
+    "unit": "jest --config ./config/jest/jest.config.ts"
   },
   "keywords": [],
   "author": "",
@@ -22,6 +23,7 @@
     "@babel/preset-react": "^7.28.5",
     "@babel/preset-typescript": "^7.28.5",
     "@eslint/js": "^9.39.2",
+    "@types/jest": "^30.0.0",
     "@types/node": "^17.0.21",
     "@types/react": "^17.0.39",
     "@types/react-dom": "^17.0.11",
@@ -38,6 +40,8 @@
     "globals": "^16.5.0",
     "html-webpack-plugin": "^5.5.0",
     "i": "^0.3.7",
+    "jest": "^30.2.0",
+    "jest-environment-jsdom": "^30.2.0",
     "mini-css-extract-plugin": "^2.5.3",
     "prettier": "^3.7.4",
     "react-refresh": "^0.18.0",
