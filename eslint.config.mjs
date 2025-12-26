@@ -36,7 +36,8 @@ export default defineConfig([
         "@typescript-eslint/no-unused-expressions": "warn",
         'no-unused-expressions': 'off',
         "react/no-deprecated": "warn",
-        "max-len": ["warn", { "ignoreComments": true, "code": 100 }]
+        "max-len": ["warn", { "ignoreComments": true, "code": 100 }],
+        "@typescript-eslint/no-unused-vars": "warn"
     },
 },
 

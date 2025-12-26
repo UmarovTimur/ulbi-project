@@ -1,24 +1,27 @@
 import { classNames } from "shared/lib/classNames/classNames";
 import cls from "./Button.module.scss";
 import { ButtonHTMLAttributes, FC, ReactNode } from "react";
-import { Theme } from "app/providers/ThemeProvider";
 
 export enum ThemeButton {
   CLEAR = "clear",
-  DARK = "primary",
+  DARK = "dark",
 }
 
 interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   children?: ReactNode;
   className?: string;
-  theme?: Theme;
+  theme?: ThemeButton;
 }
 export const Button: FC<ButtonProps> = (props) => {
-    const { children, className, ...otherProps } = props;
+    const { children, className, theme, ...otherProps } = props;
 
     return (
-        // eslint-disable-next-line react/jsx-props-no-spreading
-        <button className={classNames(cls.Button, {}, [className])} {...otherProps}>
+        <button
+            className={classNames(
+                cls.Button,
+                {[cls[theme]]: !!theme},
+                [className, theme])}
+            {...otherProps}>
             {children}
         </button>
     );

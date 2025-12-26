@@ -1,6 +1,6 @@
 {
   "[typescriptreact]": {
-    "editor.defaultFormatter": "vscode.typescript-language-features"
+    // "editor.defaultFormatter": "vscode.typescript-language-features"
   },
   "i18n-ally.localesPaths": ["public/locales", "src/shared/config/i18n"],
   "editor.formatOnSave": true,
@@ -15,5 +15,5 @@
     "typescript",
     "typescriptreact"
   ],
-  "i18n-ally.sourceLanguage": "en"
+  "i18n-ally.sourceLanguage": "ru"
 }
