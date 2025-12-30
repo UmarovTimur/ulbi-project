@@ -22,9 +22,10 @@ const config: Config = {
     "\\\\node_modules\\\\"
   ],
   moduleDirectories: [
-    "node_modules"
+    "node_modules",
+    "src"
   ],
-
+  setupFilesAfterEnv: ['<rootDir>/config/jest/jest-setup.ts'],
   // An array of file extensions your modules use
   moduleFileExtensions: [
     "js",
@@ -38,6 +39,10 @@ const config: Config = {
     "json",
     "node"
   ],
+  moduleNameMapper: {
+    '\\.(s?css|less)$': 'identity-obj-proxy',
+    "\\.svg": "<rootDir>/config/jest/jestEmptyComponent.tsx"
+  },
 
 
   // Indicates whether the coverage information should be collected while executing the test

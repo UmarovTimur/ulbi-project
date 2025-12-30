@@ -27,7 +27,7 @@ export default defineConfig([
         'no-unused-vars': 'off',
         'react/require-default-props': 'off',
         'react/react-in-jsx-scope': 'off',
-        'react/jsx-props-no-spreading': 'warn',
+        'react/jsx-props-no-spreading': 'off',
         'react/function-component-definition': 'off',
         'no-shadow': 'off',
         'import/extensions': 'off',
@@ -37,7 +37,7 @@ export default defineConfig([
         'no-unused-expressions': 'off',
         "react/no-deprecated": "warn",
         "max-len": ["warn", { "ignoreComments": true, "code": 100 }],
-        "@typescript-eslint/no-unused-vars": "warn"
+        "@typescript-eslint/no-unused-vars": "warn",
     },
 },
 
