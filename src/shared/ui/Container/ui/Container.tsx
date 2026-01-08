@@ -9,7 +9,6 @@ interface ContainerProps extends HTMLAttributes<HTMLElement> {
 
 export const Container = ({ children, className, ...rest }: ContainerProps) => {
     return (
-        // eslint-disable-next-line react/jsx-props-no-spreading
         <div className={classNames(cls.Container, {}, [className])} {...rest}>
             {children}
         </div>
