@@ -9,17 +9,21 @@
   color: var(--primary-color);
   min-height: 100vh;
 }
+
 main.content-page {
   display: grid;
   display: flex;
 }
+
 .content-wrapper {
   flex-grow: 1;
 }
+
 @keyframes rotation {
   0% {
     transform: rotate(0deg);
   }
+
   100% {
     transform: rotate(360deg);
   }

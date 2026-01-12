@@ -1,5 +1,4 @@
 // For more info, see https://github.com/storybookjs/eslint-plugin-storybook#configuration-flat-config-format
-import storybook from "eslint-plugin-storybook";
 
 import js from "@eslint/js";
 import globals from "globals";
@@ -40,7 +39,7 @@ export default defineConfig([
         'no-unused-expressions': 'off',
         "react/no-deprecated": "warn",
         "max-len": ["warn", { "ignoreComments": true, "code": 100 }],
-        "@typescript-eslint/no-unused-vars": "warn",
+        "typescript-eslint/no-unused-vars": "off",
     },
 },
 

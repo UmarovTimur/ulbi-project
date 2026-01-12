@@ -1,15 +1,15 @@
 import { Decorator, StoryFn } from "@storybook/react-webpack5";
-import { Theme } from "app/providers/ThemeProvider";
+import { CSSProperties } from "react";
 
 // eslint-disable-next-line react/display-name
-export const themeDecorator = (theme: Theme): Decorator => (Story: StoryFn) => {
+export const customStylesDecorator = (styles: CSSProperties): Decorator => (Story: StoryFn) => {
     return <div
-        className={`app ${theme}`} 
+        className={`app`} 
         style={{
             minHeight: "auto",
-            padding: (theme === Theme.DARK ? '3em' : "auto"),
             display: 'flex',
             width: '100%',
+            ...styles
         }}>
         <Story/>
     </div>
