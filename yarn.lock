@@ -6027,11 +6027,6 @@ i18next@^25.3.1, i18next@^25.7.3:
   dependencies:
     "@babel/runtime" "^7.28.4"
 
-i@^0.3.7:
-  version "0.3.7"
-  resolved "https://registry.npmjs.org/i/-/i-0.3.7.tgz"
-  integrity sha512-FYz4wlXgkQwIPqhzC5TdNMLSE5+GS1IIDJZY/1ZiEPCT2S3COUVZeT5OW4BmW4r5LHLQuOosSwsvnroG9GR59Q==
-
 iconv-lite@0.4.24:
   version "0.4.24"
   resolved "https://registry.npmjs.org/iconv-lite/-/iconv-lite-0.4.24.tgz"
@@ -7979,7 +7974,7 @@ playwright-core@1.57.0, playwright-core@>=1.2.0:
   resolved "https://registry.yarnpkg.com/playwright-core/-/playwright-core-1.57.0.tgz#3dcc9a865af256fa9f0af0d67fc8dd54eecaebf5"
   integrity sha512-agTcKlMw/mjBWOnD6kFZttAAGHgi/Nw0CZ2o6JqWSbMlI219lAFLZZCyqByTsvVAJq5XA5H8cA6PrvBRpBWEuQ==
 
-playwright@^1.14.0, playwright@^1.57.0:
+playwright@^1.14.0:
   version "1.57.0"
   resolved "https://registry.yarnpkg.com/playwright/-/playwright-1.57.0.tgz#74d1dacff5048dc40bf4676940b1901e18ad0f46"
   integrity sha512-ilYQj1s8sr2ppEJ2YVadYBN0Mb3mdo9J0wQ+UuDhzYqURwSoW4n1Xs5vs7ORwgDGmyEh33tRMeS8KhdkMoLXQw==

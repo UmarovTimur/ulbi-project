@@ -5,3 +5,4 @@ build
 extractedTranslations
 *storybook.log
 storybook-static
+**/__diff_output__

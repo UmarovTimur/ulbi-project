@@ -32,7 +32,7 @@ jobs:
           node-version: "24"
           cache: "yarn"
       - run: yarn install --frozen-lockfile
-      - run: yarn unit jj
+      - run: yarn unit
 
   build:
     runs-on: ubuntu-latest
@@ -43,7 +43,7 @@ jobs:
           node-version: "24"
           cache: "yarn"
       - run: yarn install --frozen-lockfile
-      - run: yarn build
+      - run: yarn build:prod
   # Job 4: Storybook Build
   storybook:
     runs-on: ubuntu-latest
@@ -54,4 +54,17 @@ jobs:
           node-version: "24"
           cache: "yarn"
       - run: yarn install --frozen-lockfile
-      - run: yarn build-storybook
+      - name: Install Playwright Browsers
+        # IMPORTANT: Even if you don't use Playwright for writing tests, 
+        # the test-runner needs the Chromium browser to take the screenshots.
+        run: npx playwright install chromium --with-deps
+
+      - name: Build Storybook
+        run: yarn build-storybook
+      
+      - name: Run Storybook Tests (Snapshots)
+        # We serve the build and run the test-runner against it
+        run: |
+          npx wait-on http://127.0.0.1:6006 -t 60000 & \
+          npx http-server storybook-static --port 6006 --silent & \
+          yarn test-storybook --url http://127.0.0.1:6006
