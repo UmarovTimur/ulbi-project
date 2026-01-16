@@ -1,19 +1,57 @@
+name: Test Build yarn
+
 on:
-    push:
-        branches:
-            - main
+  push:
+    branches: ["main"]
+  pull_request:
+    branches: ["main"]
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
 jobs:
-    build:
-        runs-on: ubuntu-latest
-        steps:
-            - uses: actions/checkout@v3
-            - name: Set up Node.js
-              uses: actions/setup-node@v3
-              with:
-                  node-version: '18'
-            - name: Insall Yarn
-              run: npm install -g yarn
-            - name: Install dependencies
-              run: npm install
-            - name: Run ESLint
-              run: npm run lint
+  # Job 1: Linting
+  lint:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "24"
+          cache: "yarn"
+      - run: yarn install --frozen-lockfile
+      - run: yarn lint:ts
+  # Job 2: Unit Tests
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "24"
+          cache: "yarn"
+      - run: yarn install --frozen-lockfile
+      - run: yarn unit jj
+
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "24"
+          cache: "yarn"
+      - run: yarn install --frozen-lockfile
+      - run: yarn build
+  # Job 4: Storybook Build
+  storybook:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+          cache: "yarn"
+      - run: yarn install --frozen-lockfile
+      - run: yarn build-storybook
