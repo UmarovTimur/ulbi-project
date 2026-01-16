@@ -8,9 +8,9 @@ interface ContainerProps extends HTMLAttributes<HTMLElement> {
 }
 
 export const Container = ({ children, className, ...rest }: ContainerProps) => {
-    return (
-        <div className={classNames(cls.Container, {}, [className])} {...rest}>
-            {children}
-        </div>
-    );
+  return (
+    <div className={classNames(cls.Container, {}, [className])} {...rest}>
+      {children}
+    </div>
+  );
 };

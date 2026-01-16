@@ -4,9 +4,9 @@ import { Theme } from "app/providers/ThemeProvider";
 import  NotFoundPage  from "./NotFoundPage";
 
 const meta = {
-    title: "pages/NotFoundPage",
-    component: NotFoundPage,
-    // tags: ["autodocs"],
+  title: "pages/NotFoundPage",
+  component: NotFoundPage,
+  // tags: ["autodocs"],
 } satisfies Meta<typeof NotFoundPage>;
 
 export default meta;
@@ -15,5 +15,5 @@ type Story = StoryObj<typeof meta>;
 export const NotFoundPageLight: Story = {};
 
 export const NotFoundPageDark: Story = {
-    decorators: [themeDecorator(Theme.DARK)],
+  decorators: [themeDecorator(Theme.DARK)],
 };

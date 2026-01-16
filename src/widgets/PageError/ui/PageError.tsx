@@ -6,22 +6,22 @@ import { Button, ThemeButton } from 'shared/ui/Button';
 interface PageErrorProps { className?: string; }
 
 export const PageError = ({ className }: PageErrorProps) => {
-    const { t } = useTranslation();
+  const { t } = useTranslation();
 
-    const ReloadPage = () => {
-        location.reload();
-    }
+  const ReloadPage = () => {
+    location.reload();
+  }
 
-    return (
-        <div className={classNames(cls.PageError, {}, [className])} >
-            <h1 className={cls.title} >{t(`Произошла непредвиденная ошибка`)}</h1>
-            <Button
-                className={cls.button}       
-                theme={ThemeButton.PRIMARY}
-                onClick={ReloadPage} >
+  return (
+    <div className={classNames(cls.PageError, {}, [className])} >
+      <h1 className={cls.title} >{t(`Произошла непредвиденная ошибка`)}</h1>
+      <Button
+        className={cls.button}       
+        theme={ThemeButton.PRIMARY}
+        onClick={ReloadPage} >
 
-                {t('Перезагрузить страницу')}
-            </Button>
-        </div>
-    )
+        {t('Перезагрузить страницу')}
+      </Button>
+    </div>
+  )
 }

@@ -20,9 +20,9 @@ export default defineConfig([
         globals: globals.browser,
     },
     rules: {
-        'react/jsx-indent': [2, 4],
-        'react/jsx-indent-props': [2, 4],
-        indent: [2, 4],
+        'react/jsx-indent': ["error", 2],
+        'react/jsx-indent-props': [2, 2],
+        "indent": [2, 2],
         'react/jsx-filename-extension': [2, { extensions: ['.js', '.jsx', '.tsx'] }],
         'import/no-unresolved': 'off',
         'import/prefer-default-export': 'off',
@@ -39,7 +39,7 @@ export default defineConfig([
         'no-unused-expressions': 'off',
         "react/no-deprecated": "warn",
         "max-len": ["warn", { "ignoreComments": true, "code": 100 }],
-        "typescript-eslint/no-unused-vars": "off",
+        "@typescript-eslint/no-unused-vars": "warn",
     },
 },
 

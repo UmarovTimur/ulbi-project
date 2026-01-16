@@ -8,21 +8,21 @@ interface LangSwitcherProps extends React.HTMLAttributes<HTMLButtonElement>  {
 }
 
 export const LangSwitcher = (props: LangSwitcherProps) => {
-    const { t, i18n } = useTranslation();
-    const { collapsed, ...otherProps } = props;
+  const { t, i18n } = useTranslation();
+  const { collapsed, ...otherProps } = props;
 
-    const toggle = () => {
-        i18n.changeLanguage(i18n.language === "ru" ? "en" : "ru");
-    };
+  const toggle = () => {
+    i18n.changeLanguage(i18n.language === "ru" ? "en" : "ru");
+  };
 
-    return (
-        <div>
-            <Button onClick={toggle} {...otherProps}>
-                {collapsed ?
-                    <LangIcon stroke="var(--inverse-bg-color)" width="20" height="20" />
-                    : t("Перевод")
-                }
-            </Button>
-        </div>
-    );
+  return (
+    <div>
+      <Button onClick={toggle} {...otherProps}>
+        {collapsed ?
+          <LangIcon stroke="var(--inverse-bg-color)" width="20" height="20" />
+          : t("Перевод")
+        }
+      </Button>
+    </div>
+  );
 };

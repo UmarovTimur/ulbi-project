@@ -4,9 +4,9 @@ import { Theme } from "app/providers/ThemeProvider";
 import { Loader } from "./Loader";
 
 const meta = {
-    title: "shared/Loader",
-    component: Loader,
-    tags: ["autodocs"],
+  title: "shared/Loader",
+  component: Loader,
+  tags: ["autodocs"],
 } satisfies Meta<typeof Loader>;
 
 export default meta;
@@ -15,5 +15,5 @@ type Story = StoryObj<typeof meta>;
 export const LoaderLight: Story = {};
 
 export const LoaderDark: Story = {
-    decorators: [themeDecorator(Theme.DARK)],
+  decorators: [themeDecorator(Theme.DARK)],
 };

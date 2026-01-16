@@ -8,16 +8,16 @@ interface ThemeSwitcherProps {
     className?: string;
 }
 export const ThemeSwitcher = ({ className }: ThemeSwitcherProps) => {
-    const { theme, toggleTheme } = useTheme();
+  const { theme, toggleTheme } = useTheme();
 
-    return (
-        <Button
-            theme={ThemeButton.CLEAR}
-            onClick={toggleTheme}
-            className={classNames('', {}, [className])}>
-            {theme === Theme.DARK
-                ? <NormalIcon stroke="var(--inverse-bg-color)" width="20px" height="20px" />
-                : <DarkIcon fill="var(--inverse-bg-color)" width="20px" height="20px" />}
-        </Button>
-    );
+  return (
+    <Button
+      theme={ThemeButton.CLEAR}
+      onClick={toggleTheme}
+      className={classNames('', {}, [className])}>
+      {theme === Theme.DARK
+        ? <NormalIcon stroke="var(--inverse-bg-color)" width="20px" height="20px" />
+        : <DarkIcon fill="var(--inverse-bg-color)" width="20px" height="20px" />}
+    </Button>
+  );
 };

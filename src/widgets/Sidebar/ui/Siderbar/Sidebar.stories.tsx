@@ -4,9 +4,9 @@ import { Theme } from "app/providers/ThemeProvider";
 import { Sidebar } from "./Sidebar";
 
 const meta = {
-    title: "widgets/Sidebar",
-    component: Sidebar,
-    // tags: ["autodocs"],
+  title: "widgets/Sidebar",
+  component: Sidebar,
+  // tags: ["autodocs"],
 } satisfies Meta<typeof Sidebar>;
 
 export default meta;
@@ -16,6 +16,6 @@ export const SidebarLight: Story = {
 };
 
 export const SidebarDark: Story = {
-    decorators: [themeDecorator(Theme.DARK)],
+  decorators: [themeDecorator(Theme.DARK)],
 };
 
