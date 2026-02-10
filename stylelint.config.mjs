@@ -4,4 +4,5 @@ export default {
     rules: {
         "selector-class-pattern": null
     }
+
 };

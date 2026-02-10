@@ -1,10 +1,8 @@
 import { useTranslation } from "react-i18next";
-import { Button } from "shared/ui/Button";
-import LangIcon from "shared/assets/icons/languages.svg";
+import { Button, ButtonSize, ButtonVariants } from "shared/ui/Button";
 import React from "react";
-
-interface LangSwitcherProps extends React.HTMLAttributes<HTMLButtonElement>  {
-    collapsed: boolean;
+interface LangSwitcherProps extends React.HTMLAttributes<HTMLButtonElement> {
+  collapsed: boolean;
 }
 
 export const LangSwitcher = (props: LangSwitcherProps) => {
@@ -17,11 +15,8 @@ export const LangSwitcher = (props: LangSwitcherProps) => {
 
   return (
     <div>
-      <Button onClick={toggle} {...otherProps}>
-        {collapsed ?
-          <LangIcon stroke="var(--inverse-bg-color)" width="20" height="20" />
-          : t("Перевод")
-        }
+      <Button size={ButtonSize.ICON} variant={ButtonVariants.OUTLINED} onClick={toggle} {...otherProps}>
+        <span>{collapsed ? t("Яз") : t("!Язык")}</span>
       </Button>
     </div>
   );

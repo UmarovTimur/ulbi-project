@@ -1,80 +1,93 @@
 .Sidebar {
-  height: calc(100vh - var(--navbar-height));
-  flex: 0 0 var(--sidebar-width);
-  position: relative;
-  background-color: var(--inverse-bg-color);
-  transition: flex 0.3s ease 0s;
+  width: var(--sidebar-width);
+  padding: 10px 15px 15px 15px;
+  position: fixed;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  background-color: var(--bg-secondary);
+  border-right: 1px solid var(--border-color);
 }
-
+.logo {
+  color: var(--font-color);
+  font-size: var(--font-size-l);
+  font-weight: 600;
+}
 .SidebarToggle {
   cursor: pointer;
   position: absolute;
-  bottom: 13px;
-  right: -40px;
+  top: 10px;
+  right: 10px;
   height: 40px;
   width: 40px;
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: var(--inverse-bg-color);
-  border-radius: 0 5px 5px 0;
-
+  border-radius: 5px 5px;
+  &:hover {
+    background-color: var(--gray);
+  }
   & svg {
-    // fill: var(--bg-color);
     width: 20px;
     height: 20px;
-    stroke: var(--bg-color);
+    stroke: var(--font-color);
   }
 }
-
 .links {
   display: flex;
+  padding-top: 40px;
   flex-direction: column;
-  padding: 20px 20px 20px 30px;
-  row-gap: 15px;
-
   & .link {
     display: flex;
-    align-items: center;
-
+    column-gap: 10px;
+    color: var(--font-color);
     & span {
       text-wrap-mode: nowrap;
-      margin-bottom: -1px;
-      transition: all 0.3s ease 0s;
     }
-
-    & svg {
+    &>svg {
       fill: transparent;
-      stroke: var(--secondary-color);
-      width: 18px;
-      height: 18px;
-      margin-right: 10px;
+      stroke: var(--font-color);
+      flex: 0 0 20px;
+      height: 20px;
     }
   }
 }
-
 .switchers {
   position: absolute;
   bottom: 20px;
   display: flex;
   justify-content: center;
   gap: 15px;
-  width: 100%;
 }
-
 .collapsed {
-  flex: 0 0 var(--sidebar-width-collapsed);
-
+  width: var(--sidebar-width-collapsed);
+  cursor: w-resize;
+  & .logo {
+    pointer-events: none;
+    padding: 10px !important;
+    width: 40px !important;
+    justify-content: center;
+    & span {
+      display: none;
+    }
+    &:hover {
+      opacity: 0;
+    }
+  }
+  & .SidebarToggle {
+    left: 15px;
+    opacity: 0;
+    &:hover {
+      opacity: 1;
+    }
+  }
   & .switchers {
     flex-direction: column;
     align-items: center;
   }
-
   & .link {
     & span {
-      width: 1px;
-      opacity: 0;
-      pointer-events: none;
+      display: none;
     }
   }
 }

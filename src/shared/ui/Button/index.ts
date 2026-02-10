@@ -1,1 +1,1 @@
-export { ThemeButton, Button } from "./ui/Button";
+export { ButtonVariants, ButtonSize, Button } from "./ui/Button";

@@ -1,4 +1,3 @@
-import React from "react";
 import { useTranslation } from "react-i18next";
 import { Container } from "shared/ui/Container";
 
@@ -8,6 +7,7 @@ export default function MainPage() {
   return (
     <div>
       <Container>{t("Главная страница")}</Container>
+      {/* <Modal /> */}
     </div>
   );
 }

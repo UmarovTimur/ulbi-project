@@ -10,6 +10,7 @@ import { useTranslation } from "react-i18next";
 import { RoutePath } from "shared/config/routeConfig/routeConfig";
 import HomeIcon from "shared/assets/icons/home.svg";
 import AboutIcon from "shared/assets/icons/person.svg";
+import { Button, ButtonSize, ButtonVariants } from "shared/ui/Button";
 
 interface SidebarProps {
   className?: string;
@@ -22,29 +23,47 @@ export const Sidebar = ({ className }: SidebarProps) => {
     setCollapsed((prev) => !prev);
   };
 
+  const onSidebarClick = (e: React.MouseEvent<HTMLDivElement>) => {
+    if (!collapsed) return;
+    const target = e.target as HTMLElement;
+    if (target.closest("a, button")) return;
+    if (target.closest(`.${cls.SidebarToggle}`)) return;
+    setCollapsed(false);
+  };
   return (
-    <div data-testid="sidebar"
-      className={classNames(cls.Sidebar, { [cls.collapsed]: collapsed }, [className])}>
-      <div>
+    <div
+      data-testid="sidebar"
+      className={classNames(cls.Sidebar, { [cls.collapsed]: collapsed }, [className])}
+      onClick={onSidebarClick}
+    >
+      <>
+        <Button className={cls.logo} variant={ButtonVariants.GHOST}>
+          U<span>lbi Project</span>
+        </Button>
         <div className={cls.links}>
-          <AppLink className={cls.link} theme={AppLinkTheme.SECONDARY} to={RoutePath.main}>
-            <HomeIcon />
-            <span>
-              {t("Главная страница")}
-            </span>
-          </AppLink>
-          <AppLink className={cls.link} theme={AppLinkTheme.SECONDARY} to={RoutePath.about}>
-            <AboutIcon />
-            <span>
-              {t("О нас")}
-            </span>
-          </AppLink>
+          <Button size={ButtonSize.ICON} variant={ButtonVariants.GHOST} asChild>
+            <AppLink className={cls.link} theme={AppLinkTheme.SECONDARY} to={RoutePath.main}>
+              <HomeIcon />
+              <span>{t("Главная страница")}</span>
+            </AppLink>
+          </Button>
+          <Button size={ButtonSize.ICON} variant={ButtonVariants.GHOST} asChild>
+            <AppLink className={cls.link} theme={AppLinkTheme.SECONDARY} to={RoutePath.about}>
+              <AboutIcon />
+              <span>{t("О нас")}</span>
+            </AppLink>
+          </Button>
         </div>
-      </div>
+      </>
 
-      <div className={classNames(cls.SidebarToggle)} onClick={onToggle}>
+      <Button
+        variant={ButtonVariants.GHOST}
+        size={ButtonSize.ICON}
+        className={classNames(cls.SidebarToggle)}
+        onClick={onToggle}
+      >
         {collapsed ? <OpenSidebarIcon /> : <CloseSidebarIcon />}
-      </div>
+      </Button>
 
       <div className={cls.switchers}>
         <LangSwitcher collapsed={collapsed} />

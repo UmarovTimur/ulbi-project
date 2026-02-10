@@ -1,29 +1,26 @@
 @use "reset";
+@use "base/converters";
 @use "variables/global";
 @use "themes/dark";
 @use "themes/normal";
-
 .app {
-  font: var(--font-m);
-  background: var(--bg-color);
-  color: var(--primary-color);
   min-height: 100vh;
 }
-
-main.content-page {
-  display: grid;
-  display: flex;
+.app {
+  background-color: var(--bg-color);
+  font-family: var(--font-family-main);
+  line-height: var(--font-line-m);
+  font-size: var(--font-size-m);
+  color: var(--font-color);
 }
-
+.content-page {}
 .content-wrapper {
   flex-grow: 1;
 }
-
 @keyframes rotation {
   0% {
     transform: rotate(0deg);
   }
-
   100% {
     transform: rotate(360deg);
   }

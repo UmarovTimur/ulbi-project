@@ -1,8 +1,7 @@
 .Navbar {
   width: 100%;
   height: var(--navbar-height);
-  background-color: var(--inverse-bg-color);
-  color: var(--bg-color);
+  border-bottom: 1px solid var(--border-color);
 }
 
 .NavbarContainer {

@@ -2,22 +2,26 @@ import { classNames } from "shared/lib/classNames/classNames";
 import { useTheme, Theme } from "app/providers/ThemeProvider";
 import NormalIcon from "shared/assets/icons/sun.svg";
 import DarkIcon from "shared/assets/icons/moon.svg";
-import { Button, ThemeButton } from "shared/ui/Button";
+import { Button, ButtonSize, ButtonVariants } from "shared/ui/Button";
 
 interface ThemeSwitcherProps {
-    className?: string;
+  className?: string;
 }
 export const ThemeSwitcher = ({ className }: ThemeSwitcherProps) => {
   const { theme, toggleTheme } = useTheme();
 
   return (
     <Button
-      theme={ThemeButton.CLEAR}
+      variant={ButtonVariants.OUTLINED}
+      size={ButtonSize.ICON}
       onClick={toggleTheme}
-      className={classNames('', {}, [className])}>
-      {theme === Theme.DARK
-        ? <NormalIcon stroke="var(--inverse-bg-color)" width="20px" height="20px" />
-        : <DarkIcon fill="var(--inverse-bg-color)" width="20px" height="20px" />}
+      className={classNames("", {}, [className])}
+    >
+      {theme === Theme.DARK ? (
+        <NormalIcon stroke="var(--font-color)" width="20px" height="20px" />
+      ) : (
+        <DarkIcon fill="var(--font-color)" width="20px" height="20px" />
+      )}
     </Button>
   );
 };

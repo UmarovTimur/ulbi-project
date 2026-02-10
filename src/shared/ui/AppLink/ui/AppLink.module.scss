@@ -1,16 +1,10 @@
 .AppLink {
    color: var(--inverse-bg-color);
    text-decoration: none;
-
-   &:hover {
-      opacity: .5;
-   }
 }
-
 .primary {
    color: var(--primary-color);
 }
-
 .secondary {
    color: var(--secondary-color);
 }
