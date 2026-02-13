@@ -10,7 +10,7 @@ import { useTranslation } from "react-i18next";
 import { RoutePath } from "shared/config/routeConfig/routeConfig";
 import HomeIcon from "shared/assets/icons/home.svg";
 import AboutIcon from "shared/assets/icons/person.svg";
-import { Button, ButtonSize, ButtonVariants } from "shared/ui/Button";
+import { Button, ButtonVariants } from "shared/ui/Button";
 
 interface SidebarProps {
   className?: string;
