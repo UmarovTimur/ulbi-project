@@ -1,21 +1,20 @@
+
 import type { Meta, StoryObj } from "@storybook/react-webpack5";
 import { themeDecorator } from "shared/config/storybook/themeDecorator";
 import { Theme } from "app/providers/ThemeProvider";
-import { ThemeSwitcher } from "./ThemeSwitcher";
+import { LangSwitcher } from "./LangSwitcher";
 
 const meta = {
-  title: "shared/ThemeSwitcher",
-  component: ThemeSwitcher,
+  title: "shared/LangSwitcher",
+  component: LangSwitcher,
   // tags: ["autodocs"],
-} satisfies Meta<typeof ThemeSwitcher>;
+} satisfies Meta<typeof LangSwitcher>;
 
 export default meta;
 type Story = StoryObj<typeof meta>;
 
-export const ThemeSwitcherLight: Story = {
-  decorators: [themeDecorator(Theme.LIGHT)],
-};
+export const LangSwitcherLight: Story = {};
 
-export const ThemeSwitcherDark: Story = {
+export const LangSwitcherDark: Story = {
   decorators: [themeDecorator(Theme.DARK)],
 };

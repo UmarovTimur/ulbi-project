@@ -9,6 +9,7 @@
     // В какую спецификацию компилируем: для поддержки большинства браузеров
     "target": "es5",
     "jsx": "react-jsx",
+    "strict": true,
     // Компилятор будет обрабатывать не только TS файлы, но и JS файлы
     "allowJs": true,
     "moduleResolution": "bundler",
@@ -32,14 +33,13 @@
     // import * as React from 'react';
     // можно писать такой
     // import React from 'react';
-    "allowSyntheticDefaultImports": true,
+    "allowSyntheticDefaultImports": true
   },
   "ts-node": {
     "compilerOptions": {
-      "module": "CommonJS",
-
+      "module": "CommonJS"
     }
-  },
+  }
   // "include": [
   //   "src",
   //   "./config/jest/jest-setup.ts"

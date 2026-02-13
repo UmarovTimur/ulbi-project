@@ -1,7 +1,5 @@
 import type { Preview } from "@storybook/react-webpack5";
 import "../../src/app/styles/index.scss";
-import { themeDecorator } from "shared/config/storybook/themeDecorator";
-import { Theme } from "app/providers/ThemeProvider";
 import { routerDecorator } from "shared/config/storybook/routerDecorator";
 
 const preview: Preview = {
@@ -15,7 +13,7 @@ const preview: Preview = {
   },
   decorators: [
         routerDecorator(),
-        themeDecorator(Theme.LIGHT),
+        // themeDecorator(Theme.LIGHT),
   ],
 };
 

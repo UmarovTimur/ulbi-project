@@ -4,17 +4,20 @@ import ThemeProvider from "app/providers/ThemeProvider/ui/ThemeProvider";
 import { render } from "react-dom";
 import { BrowserRouter } from "react-router-dom";
 import "shared/config/i18n/i18n";
+import "./app/styles/index.scss";
 
 render(
-  <BrowserRouter future={{
-    v7_startTransition: true,
-    v7_relativeSplatPath: true,
-  }} >
+  <BrowserRouter
+    future={{
+      v7_startTransition: true,
+      v7_relativeSplatPath: true,
+    }}
+  >
     <ErrorBoundary>
       <ThemeProvider>
         <App />
       </ThemeProvider>
     </ErrorBoundary>
   </BrowserRouter>,
-  document.getElementById("root")
+  document.getElementById("root"),
 );

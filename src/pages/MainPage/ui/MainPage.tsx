@@ -7,7 +7,6 @@ export default function MainPage() {
   return (
     <div>
       <Container>{t("Главная страница")}</Container>
-      {/* <Modal /> */}
     </div>
   );
 }

@@ -33,37 +33,48 @@ export const Sidebar = ({ className }: SidebarProps) => {
   return (
     <div
       data-testid="sidebar"
-      className={classNames(cls.Sidebar, { [cls.collapsed]: collapsed }, [className])}
+      className={classNames(cls.Sidebar, { [cls.collapsed]: collapsed }, [
+        className,
+      ])}
       onClick={onSidebarClick}
     >
       <>
-        <Button className={cls.logo} variant={ButtonVariants.GHOST}>
-          U<span>lbi Project</span>
-        </Button>
+        <div className={cls.header}>
+          <Button className={cls.logo} variant={ButtonVariants.GHOST}>
+            U<span>lbi Project</span>
+          </Button>{" "}
+          <Button
+            variant={ButtonVariants.GHOST}
+            className={classNames(cls.SidebarToggle)}
+            onClick={onToggle}
+          >
+            {collapsed ? <OpenSidebarIcon /> : <CloseSidebarIcon />}
+          </Button>
+        </div>
+
         <div className={cls.links}>
-          <Button size={ButtonSize.ICON} variant={ButtonVariants.GHOST} asChild>
-            <AppLink className={cls.link} theme={AppLinkTheme.SECONDARY} to={RoutePath.main}>
+          <Button variant={ButtonVariants.GHOST} asChild>
+            <AppLink
+              className={cls.link}
+              theme={AppLinkTheme.SECONDARY}
+              to={RoutePath.main}
+            >
               <HomeIcon />
               <span>{t("Главная страница")}</span>
             </AppLink>
           </Button>
-          <Button size={ButtonSize.ICON} variant={ButtonVariants.GHOST} asChild>
-            <AppLink className={cls.link} theme={AppLinkTheme.SECONDARY} to={RoutePath.about}>
+          <Button variant={ButtonVariants.GHOST} asChild>
+            <AppLink
+              className={cls.link}
+              theme={AppLinkTheme.SECONDARY}
+              to={RoutePath.about}
+            >
               <AboutIcon />
               <span>{t("О нас")}</span>
             </AppLink>
           </Button>
         </div>
       </>
-
-      <Button
-        variant={ButtonVariants.GHOST}
-        size={ButtonSize.ICON}
-        className={classNames(cls.SidebarToggle)}
-        onClick={onToggle}
-      >
-        {collapsed ? <OpenSidebarIcon /> : <CloseSidebarIcon />}
-      </Button>
 
       <div className={cls.switchers}>
         <LangSwitcher collapsed={collapsed} />

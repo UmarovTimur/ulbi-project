@@ -9,14 +9,18 @@ interface useThemeResult {
 export function useTheme(): useThemeResult {
   const { theme, setTheme } = useContext(ThemeContext);
 
+  if (!theme) {
+    throw new Error("use theme only in Theme Context");
+  }
+
   const toggleTheme = () => {
     const newTheme = theme === Theme.DARK ? Theme.LIGHT : Theme.DARK;
     setTheme?.(newTheme);
     localStorage.setItem(LOCAL_STORAGE_THEME_KEY, newTheme);
-  }
+  };
 
   return {
-    theme, 
-    toggleTheme
-  }
+    theme,
+    toggleTheme,
+  };
 }

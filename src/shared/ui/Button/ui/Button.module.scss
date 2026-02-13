@@ -4,36 +4,45 @@
   border-radius: 5px;
   display: flex;
   align-items: center;
+  column-gap: 0.3em;
+  padding: 10px;
+  transition: all 0.3s ease 0s;
+  &:hover {
+    opacity: .8;
+  }
 }
+// sizes
+.icon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 40px;
+  height: 40px;
+  & * {
+    // min-width: 20px;
+  }
+}
+// variants
 .clear {
   color: var(--inverse-bg-color);
   background-color: var(--bg-color);
-  padding: 2px 10px;
-  column-gap: 5px;
 }
 .primary {
   border: 1px solid var(--bg-color);
   background-color: var(--inverse-bg-color);
   color: var(--bg-color);
-  padding: 4px 12px;
 }
 .outlined {
   border: 1px solid var(--font-color);
   color: var(--font-color);
   background-color: transparent;
-  padding: 4px 12px;
 }
 .ghost {
   background-color: transparent;
-  padding: 10px 15px;
   line-height: 20px;
+  color: var(--font-color);
   &:hover {
     background-color: var(--gray);
-  }
-}
-.icon {
-  padding: 10px;
-  & * {
-    min-width: 20px;
+    opacity: 1;
   }
 }

@@ -1,4 +1,3 @@
-import "./styles/index.scss";
 import { classNames } from "shared/lib/classNames/classNames";
 import { useTheme } from "app/providers/ThemeProvider";
 import { AppRouter } from "./providers/router";
@@ -11,13 +10,15 @@ const App = () => {
 
   return (
     <div className={classNames("app", {}, [theme])}>
-      <Suspense fallback="">
-        <main className="content-page">
-          <Navbar />
+      <div className="app-wrapper">
+        <Suspense fallback="">
           <Sidebar />
-          <AppRouter />
-        </main>
-      </Suspense>
+          <main className="content-page">
+            <Navbar />
+            <AppRouter />
+          </main>
+        </Suspense>
+      </div>
     </div>
   );
 };

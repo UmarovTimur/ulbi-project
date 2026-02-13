@@ -3,17 +3,27 @@
 @use "variables/global";
 @use "themes/dark";
 @use "themes/normal";
+body,
 .app {
-  min-height: 100vh;
-}
-.app {
-  background-color: var(--bg-color);
   font-family: var(--font-family-main);
   line-height: var(--font-line-m);
   font-size: var(--font-size-m);
   color: var(--font-color);
+  height: 100%;
 }
-.content-page {}
+.app {
+  background-color: var(--bg-color);
+}
+.app-wrapper {
+  display: flex;
+  min-height: 100vh;
+  min-height: 100dvh;
+}
+.content-page {
+  flex: 1 1 auto;
+  display: flex;
+  flex-direction: column;
+}
 .content-wrapper {
   flex-grow: 1;
 }

@@ -4,8 +4,18 @@
   left: 0;
   bottom: 0;
   right: 0;
-  z-index: var(--modal-z-index);
   background-color: rgba(0, 0, 0, 60%);
+  pointer-events: none;
+  z-index: -1;
+  &.opened {
+    z-index: var(--modal-z-index);
+    pointer-events: all;
+    animation: fadeIn 0.2s forwards;
+  }
+  &.closing {
+    animation: fadeOut 0.2s forwards;
+  }
+  color: var(--font-color);
 }
 .overlay {
   display: flex;
@@ -15,9 +25,50 @@
   height: 100%;
 }
 .content {
-  width: 100px;
-  height: 100px;
+  border: 1px solid var(--border-color);
+  min-width: 100px;
+  width: var(--modal-width);
+  max-width: calc(100vw - 30px);
+  min-height: 100px;
   padding: 20px;
   border-radius: 12px;
   background-color: var(--bg-color);
+  .opened & {
+    animation: slideIn 0.2s forwards;
+  }
+  .closing & {
+    animation: slideOut 0.2s forwards;
+  }
+}
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@keyframes fadeOut {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+@keyframes slideIn {
+  from {
+    scale: 0.95;
+  }
+  to {
+    scale: 1;
+  }
+}
+@keyframes slideOut {
+  from {
+    scale: 1;
+  }
+  to {
+    scale: 0.95;
+  }
 }

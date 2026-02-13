@@ -20,7 +20,15 @@ type Story = StoryObj<typeof meta>;
 export const Clear: Story = {
   args: {
     variant: ButtonVariants.CLEAR,
-    children: "Outlined",
+    children: "Clear",
+  },
+};
+
+export const ClearDark: Story = {
+  decorators: [themeDecorator(Theme.DARK)],
+  args: {
+    variant: ButtonVariants.CLEAR,
+    children: "Clear dark",
   },
 };
 
@@ -28,6 +36,14 @@ export const Outlined: Story = {
   args: {
     variant: ButtonVariants.OUTLINED,
     children: "Outlined",
+  },
+};
+
+export const OutlinedDark: Story = {
+  decorators: [themeDecorator(Theme.DARK)],
+  args: {
+    variant: ButtonVariants.OUTLINED,
+    children: "Dark",
   },
 };
 
