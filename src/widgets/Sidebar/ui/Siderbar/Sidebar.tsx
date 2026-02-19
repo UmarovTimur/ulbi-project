@@ -7,7 +7,7 @@ import CloseSidebarIcon from "shared/assets/icons/panel-left-close.svg";
 import OpenSidebarIcon from "shared/assets/icons/panel-left-open.svg";
 import { AppLink, AppLinkTheme } from "shared/ui/AppLink";
 import { useTranslation } from "react-i18next";
-import { RoutePath } from "shared/config/routeConfig/routeConfig";
+import { RoutePath } from "app/providers/router";
 import HomeIcon from "shared/assets/icons/home.svg";
 import AboutIcon from "shared/assets/icons/person.svg";
 import { Button, ButtonVariants } from "shared/ui/Button";
