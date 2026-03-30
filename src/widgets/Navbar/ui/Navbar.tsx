@@ -3,7 +3,8 @@ import cls from "./Navbar.module.scss";
 import { Container } from "shared/ui/Container";
 import { Button, ButtonVariants } from "shared/ui/Button";
 import { useCallback, useState } from "react";
-import { Modal } from "shared/ui/Modal";
+import { LoginModal } from "features/AuthByUsername";
+import { useTranslation } from "react-i18next";
 
 interface NavbarProps {
   className?: string;
@@ -11,18 +12,23 @@ interface NavbarProps {
 
 export const Navbar = ({ className }: NavbarProps) => {
   const [isAuthOpen, setIsAuthOpen] = useState(false);
+  const { t } = useTranslation();
 
-  const onAuthToggle = useCallback(() => {
-    setIsAuthOpen((prev) => !prev);
+  const onCloseModal = useCallback(() => {
+    setIsAuthOpen(false);
+  }, []);
+
+  const onOpenModal = useCallback(() => {
+    setIsAuthOpen(true);
   }, []);
 
   return (
     <header className={classNames(cls.Navbar, {}, [className])}>
       <Container className={cls.NavbarContainer}>
-        <Button onClick={onAuthToggle} variant={ButtonVariants.CLEAR}>
-          Login
+        <Button onClick={onOpenModal} variant={ButtonVariants.CLEAR}>
+          {t('Войти')}
         </Button>
-        <Modal isOpen={isAuthOpen} onClose={onAuthToggle} />
+        <LoginModal isOpen={isAuthOpen} onClose={onCloseModal} />
       </Container>
     </header>
   );

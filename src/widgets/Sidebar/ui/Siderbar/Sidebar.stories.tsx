@@ -7,7 +7,7 @@ import { customStylesDecorator } from "shared/config/storybook/customStylesDecor
 const meta = {
   title: "widgets/Sidebar",
   component: Sidebar,
-  decorators: [customStylesDecorator({display: "flex", height: "100%"})]
+  decorators: [customStylesDecorator({ display: "flex", height: "100%" })]
   // tags: ["autodocs"],
 } satisfies Meta<typeof Sidebar>;
 
@@ -15,6 +15,7 @@ export default meta;
 type Story = StoryObj<typeof meta>;
 
 export const SidebarLight: Story = {
+  decorators: [themeDecorator(Theme.LIGHT)],
 };
 
 export const SidebarDark: Story = {

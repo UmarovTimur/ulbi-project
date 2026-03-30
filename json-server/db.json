@@ -24,6 +24,13 @@
       "postId": "1"
     }
   ],
+  "users": [
+    {
+      "id": "1",
+      "username": "admin",
+      "password": "1234"
+    }
+  ],
   "profile": {
     "name": "typicode"
   }

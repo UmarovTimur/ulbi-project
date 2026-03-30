@@ -25,13 +25,12 @@
   height: 100%;
 }
 .content {
-  border: 1px solid var(--border-color);
   min-width: 100px;
   width: var(--modal-width);
   max-width: calc(100vw - 30px);
   min-height: 100px;
   padding: 20px;
-  border-radius: 12px;
+  border-radius: var(--border-radius);
   background-color: var(--bg-color);
   .opened & {
     animation: slideIn 0.2s forwards;
