@@ -7,18 +7,22 @@
     "noImplicitAny": true,
     "module": "ESNext",
     // В какую спецификацию компилируем: для поддержки большинства браузеров
-    "target": "es5",
+    // "target": "es5",
     "jsx": "react-jsx",
     "strict": true,
     // Компилятор будет обрабатывать не только TS файлы, но и JS файлы
     "allowJs": true,
     "moduleResolution": "bundler",
     // Для абсолютного импорта
-    "baseUrl": ".",
+    // "baseUrl": ".",
     "paths": {
-      "*": ["./src/*"]
+      "*": [
+        "./src/*"
+      ]
     },
-    "types": ["@testing-library/jest-dom"],
+    "types": [
+      "@testing-library/jest-dom"
+    ],
     // esModuleInterop позволяет работать с пакетами, которые используют
     // common js как с обычными пакета с помощью import (require() module.export) = common js
     // import Moment from 'moment';

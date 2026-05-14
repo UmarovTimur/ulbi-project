@@ -1,7 +1,6 @@
 import { classNames } from 'shared/lib/classNames/classNames';
-import cls from './LoginModal.module.scss';
 import { Modal } from 'shared/ui/Modal';
-import { LoginForm } from '../LoginForm/LoginForm';
+import LoginForm from '../LoginForm/LoginForm';
 
 interface LoginModalProps {
   className?: string;
@@ -11,7 +10,7 @@ interface LoginModalProps {
 
 export const LoginModal = ({ className, isOpen, onClose }: LoginModalProps) => {
   return (
-    <Modal className={classNames(cls.LoginModal, {}, [className])} isOpen={isOpen} onClose={onClose} >
+    <Modal className={classNames('', {}, [className])} isOpen={isOpen} onClose={onClose} >
       <LoginForm />
     </Modal>
   )

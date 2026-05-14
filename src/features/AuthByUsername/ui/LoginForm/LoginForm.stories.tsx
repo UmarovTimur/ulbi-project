@@ -1,7 +1,7 @@
 import { Meta, StoryObj } from "@storybook/react-webpack5";
 import { themeDecorator } from "shared/config/storybook/themeDecorator";
 import { Theme } from "app/providers/ThemeProvider";
-import { LoginForm } from "./LoginForm";
+import LoginForm from "./LoginForm";
 
 const meta = {
   title: "features/LoginForm",
